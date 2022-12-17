@@ -1,0 +1,27 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+{% block content %}
+
+<h3>Список студентов</h3>
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">ФИО</th>
+      <th scope="col">Оценка</th>
+      <th scope="col">Номер группы</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for item in people %}
+      <tr>
+      <th scope="row">{{item.id}}</th>
+      <td>{{ item.name }}</td>
+      <td>{{ item.estimation }}</td>
+      <td>{{ item.group }}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}
